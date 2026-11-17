@@ -1,0 +1,463 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KZOptimizer by Kaizen Developer — Precision Minecraft server optimization plugin for Paper, Purpur, and Folia." />
+  <title>KZOPTIMIZER — KAIZEN DEVELOPER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <img src="assets/logo.svg" alt="Kaizen Developer Logo" width="28" height="28" />
+        <span class="brand-name">KAIZEN DEVELOPER</span>
+        <span class="brand-divider">/</span>
+        <span class="brand-product">KZOPTIMIZER</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#plugin">Plugin Info</a>
+        <a href="#optimization">Optimization Guide</a>
+        <a href="#install">Installation</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://discord.gg/gPuy2AmuMm" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">Discord</a>
+        <a href="https://github.com/kaizendev172/kzoptimizer-plugin" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Download</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#plugin" class="mobile-link">Plugin Info</a>
+      <a href="#optimization" class="mobile-link">Optimization Guide</a>
+      <a href="#install" class="mobile-link">Installation</a>
+      <a href="#about" class="mobile-link">About</a>
+      <div class="mobile-menu-actions">
+        <a href="https://github.com/kaizendev172/kzoptimizer-plugin" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download Plugin</a>
+        <a href="https://discord.gg/gPuy2AmuMm" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Join Discord</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / KZOptimizer Introduction -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-tag">
+            <span class="status-dot"></span>
+            <span>MC 1.18 – 1.21+ • PAPER / PURPUR / FOLIA</span>
+          </div>
+
+          <h1>Eliminate server lag without breaking gameplay.</h1>
+
+          <p class="hero-lead">
+            <strong>KZOptimizer</strong> is a lightweight, deterministic performance engine engineered by <strong>Kaizen Developer</strong>. It dynamically throttles entity activation, manages chunk GC cycles, and resolves main-thread tick spikes on high-concurrency Minecraft servers.
+          </p>
+
+          <div class="hero-cta">
+            <a href="https://github.com/kaizendev172/kzoptimizer-plugin" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Plugin
+            </a>
+            <a href="https://discord.gg/gPuy2AmuMm" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+              Join Discord
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-value">20.0 TPS</span>
+              <span class="metric-label">Target Tick Stability</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">&lt; 0.35 ms</span>
+              <span class="metric-label">Plugin Tick Overhead</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">Zero-Lag</span>
+              <span class="metric-label">Async Cleanup Tasks</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Terminal / Telemetry Preview -->
+        <div class="terminal-window" aria-label="Server Console Output">
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="terminal-title">server-console — /kz status</span>
+            <button class="terminal-action" id="simulateTickBtn" type="button">Run Diagnostic</button>
+          </div>
+          <div class="terminal-body" id="terminalOutput">
+            <div class="log-line"><span class="log-time">[14:22:08]</span> <span class="log-tag">[KZOptimizer]</span> Engine initialized on Paper 1.21.4 (Java 21)</div>
+            <div class="log-line"><span class="log-time">[14:22:09]</span> <span class="log-tag">[KZOptimizer]</span> Dynamic View-Distance controller: <span class="log-ok">ACTIVE (6 -> 10)</span></div>
+            <div class="log-line"><span class="log-time">[14:22:10]</span> <span class="log-tag">[KZOptimizer]</span> Smart Entity AI Throttler: <span class="log-ok">ENABLED</span></div>
+            <div class="log-line"><span class="log-time">[14:22:14]</span> <span class="log-cmd">&gt; kz status</span></div>
+            <div class="log-block">
+              <div><span class="log-accent">━━━ KZOPTIMIZER TELEMETRY ━━━</span></div>
+              <div>TPS (1m, 5m, 15m): <span class="log-ok">20.00, 20.00, 19.99</span></div>
+              <div>MSPT (Avg / P95):  <span class="log-ok">11.4 ms / 16.8 ms</span></div>
+              <div>Active Entities:   <span>1,412 (840 throttled)</span></div>
+              <div>Loaded Chunks:     <span>3,890 (Dynamic VD: 10)</span></div>
+              <div>Heap Memory:       <span>4,120 MB / 12,288 MB (33%)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plugin Information -->
+    <section id="plugin" class="section border-top">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">01 // PLUGIN INFORMATION</span>
+          <h2>Engineered for predictable tick times.</h2>
+          <p class="section-desc">
+            Instead of blindly wiping ground items or breaking redstone contraptions, KZOptimizer targets the actual root causes of main-thread stalls.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-index">01</div>
+            <h3>Adaptive Entity Activation</h3>
+            <p>
+              Dynamically scales mob AI tick rates and pathfinding calculations based on player proximity, line-of-sight, and real-time MSPT headroom.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-index">02</div>
+            <h3>Dynamic View &amp; Simulation Distance</h3>
+            <p>
+              Automatically adjusts per-world simulation and view distances during player surges so the server never drops below 20 TPS.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-index">03</div>
+            <h3>Non-Destructive Item &amp; XP Merging</h3>
+            <p>
+              Consolidates nearby dropped entities and experience orbs into single packets with configurable radius limits—preserving farm output without clear-lag frustration.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-index">04</div>
+            <h3>Hopper &amp; Redstone Tick Mitigation</h3>
+            <p>
+              Eliminates redundant inventory transfer checks on full containers and caches block-state lookups in dense technical farms.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-index">05</div>
+            <h3>Chunk Unload &amp; GC Guard</h3>
+            <p>
+              Prevents sudden I/O freezes by pacing inactive chunk unloads across multiple ticks and avoiding forced synchronous garbage collection pauses.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-index">06</div>
+            <h3>Built-in Profiler &amp; Spike Alerts</h3>
+            <p>
+              Identifies lag-heavy chunks, entity clusters, and misbehaving plugins in real time with actionable console and Discord webhook reports.
+            </p>
+          </article>
+        </div>
+
+        <!-- Technical Specs Table -->
+        <div class="specs-box">
+          <div class="specs-row">
+            <span class="specs-key">Supported Platforms</span>
+            <span class="specs-val">Paper, Purpur, Pufferfish, Gale, Folia (Spigot supported with reduced async features)</span>
+          </div>
+          <div class="specs-row">
+            <span class="specs-key">Minecraft Versions</span>
+            <span class="specs-val">1.18.2, 1.19.4, 1.20.x, 1.21.x</span>
+          </div>
+          <div class="specs-row">
+            <span class="specs-key">Java Requirement</span>
+            <span class="specs-val">Java 17 or Java 21+ (Recommended)</span>
+          </div>
+          <div class="specs-row">
+            <span class="specs-key">Dependencies</span>
+            <span class="specs-val">None (Zero external plugin dependencies required)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Server Optimization Guide -->
+    <section id="optimization" class="section border-top">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">02 // SERVER OPTIMIZATION GUIDE</span>
+          <h2>Recommended Server Configuration</h2>
+          <p class="section-desc">
+            Pair KZOptimizer with properly tuned JVM flags and server files for maximum stability under heavy player load.
+          </p>
+        </div>
+
+        <div class="guide-layout">
+          <div class="guide-tabs" role="tablist" aria-label="Optimization Configuration Files">
+            <button class="guide-tab active" data-target="tab-jvm" role="tab" aria-selected="true">1. Startup JVM Flags</button>
+            <button class="guide-tab" data-target="tab-paper" role="tab" aria-selected="false">2. paper-world-defaults.yml</button>
+            <button class="guide-tab" data-target="tab-bukkit" role="tab" aria-selected="false">3. bukkit.yml &amp; spigot.yml</button>
+            <button class="guide-tab" data-target="tab-kz" role="tab" aria-selected="false">4. kzoptimizer/config.yml</button>
+          </div>
+
+          <div class="guide-panels">
+            <!-- Panel 1: JVM Flags -->
+            <div class="guide-panel active" id="tab-jvm">
+              <div class="panel-top">
+                <div>
+                  <h3>Aikar's / Generational ZGC Startup Flags</h3>
+                  <p>Prevents stop-the-world GC lag spikes when heap allocation exceeds 8 GB.</p>
+                </div>
+                <button class="btn-copy" data-copy="code-jvm">Copy Flags</button>
+              </div>
+              <pre><code id="code-jvm">java -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled \
+-XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions \
+-XX:+DisableExplicitGC -XX:+AlwaysPreTouch \
+-XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 \
+-XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 \
+-XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 \
+-XX:InitiatingHeapOccupancyPercent=15 \
+-XX:G1MixedGCLiveThresholdPercent=90 \
+-XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem \
+-XX:MaxTenuringThreshold=1 -jar server.jar --nogui</code></pre>
+            </div>
+
+            <!-- Panel 2: Paper Config -->
+            <div class="guide-panel" id="tab-paper">
+              <div class="panel-top">
+                <div>
+                  <h3>config/paper-world-defaults.yml</h3>
+                  <p>Reduces redundant entity collisions, anti-xray overhead, and chunk save stalls.</p>
+                </div>
+                <button class="btn-copy" data-copy="code-paper">Copy Config</button>
+              </div>
+              <pre><code id="code-paper">chunks:
+  auto-save-interval: 6000
+  max-auto-save-chunks-per-tick: 8
+  prevent-moving-into-unloaded-chunks: true
+
+collisions:
+  max-entity-collisions: 2
+  fix-climbing-bypassing-cramming-rule: true
+
+entities:
+  spawning:
+    despawn-ranges:
+      ambient: { hard: 72, soft: 30 }
+      creature: { hard: 72, soft: 30 }
+      monster: { hard: 72, soft: 30 }
+  behavior:
+    tick-rates:
+      sensor:
+        villager:
+          secondarypoisensor: 40
+      behavior:
+        villager:
+          validatenearbypoi: -1</code></pre>
+            </div>
+
+            <!-- Panel 3: Bukkit & Spigot -->
+            <div class="guide-panel" id="tab-bukkit">
+              <div class="panel-top">
+                <div>
+                  <h3>bukkit.yml &amp; spigot.yml</h3>
+                  <p>Controls monster spawn caps and entity activation ranges at the engine level.</p>
+                </div>
+                <button class="btn-copy" data-copy="code-bukkit">Copy Config</button>
+              </div>
+              <pre><code id="code-bukkit"># bukkit.yml
+spawn-limits:
+  monsters: 50
+  animals: 8
+  water-animals: 3
+  water-ambient: 4
+  ambient: 1
+ticks-per:
+  monster-spawns: 4
+  animal-spawns: 400
+
+# spigot.yml
+world-settings:
+  default:
+    mob-spawn-range: 6
+    entity-activation-range:
+      animals: 16
+      monsters: 24
+      raiders: 48
+      misc: 8
+    merge-radius:
+      item: 3.5
+      exp: 5.0</code></pre>
+            </div>
+
+            <!-- Panel 4: KZOptimizer Config -->
+            <div class="guide-panel" id="tab-kz">
+              <div class="panel-top">
+                <div>
+                  <h3>plugins/KZOptimizer/config.yml</h3>
+                  <p>Recommended baseline profile for Survival, SMP, Lifesteal, and Skyblock servers.</p>
+                </div>
+                <button class="btn-copy" data-copy="code-kz">Copy Config</button>
+              </div>
+              <pre><code id="code-kz">settings:
+  target-tps: 19.8
+  dynamic-view-distance:
+    enabled: true
+    min-distance: 5
+    max-distance: 10
+  entity-throttler:
+    enabled: true
+    disable-ai-beyond-blocks: 40
+    preserve-named-entities: true
+    preserve-villager-trading: true
+  item-merger:
+    enabled: true
+    radius: 3.5
+    ignore-custom-nbt: true
+  hopper-optimization:
+    skip-full-containers: true
+    cooldown-ticks: 8</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Instructions -->
+    <section id="install" class="section border-top">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">03 // INSTALLATION INSTRUCTIONS</span>
+          <h2>Deploy in under two minutes.</h2>
+          <p class="section-desc">
+            KZOptimizer works immediately out of the box with safe defaults and generates its configuration files on first boot.
+          </p>
+        </div>
+
+        <div class="install-steps">
+          <div class="step-card">
+            <span class="step-num">STEP 01</span>
+            <h3>Download the JAR</h3>
+            <p>
+              Grab the latest release build of <code>KZOptimizer.jar</code> directly from the official Kaizen Developer GitHub repository.
+            </p>
+            <a href="https://github.com/kaizendev172/kzoptimizer-plugin" target="_blank" rel="noopener noreferrer" class="text-link">
+              github.com/kaizendev172/kzoptimizer-plugin &rarr;
+            </a>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">STEP 02</span>
+            <h3>Upload to Plugins Folder</h3>
+            <p>
+              Stop your Minecraft server cleanly, then place <code>KZOptimizer.jar</code> inside your server's <code>/plugins/</code> directory. Avoid using <code>/reload</code>.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">STEP 03</span>
+            <h3>Start &amp; Verify</h3>
+            <p>
+              Boot your server and run <code>/kz status</code> in console or in-game (requires <code>kzoptimizer.admin</code>) to confirm active telemetry.
+            </p>
+          </div>
+        </div>
+
+        <div class="command-bar">
+          <div class="command-info">
+            <span class="badge-cmd">CORE COMMANDS</span>
+            <code>/kz status</code>
+            <code>/kz reload</code>
+            <code>/kz gc</code>
+            <code>/kz profile</code>
+          </div>
+          <a href="https://discord.gg/gPuy2AmuMm" target="_blank" rel="noopener noreferrer" class="text-link">Need setup help? Ask in Discord &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About KAIZEN DEVELOPER -->
+    <section id="about" class="section border-top">
+      <div class="container about-grid">
+        <div class="about-main">
+          <span class="section-eyebrow">04 // ABOUT KAIZEN DEVELOPER</span>
+          <h2>Continuous improvement, applied to Minecraft engineering.</h2>
+          <p>
+            <strong>Kaizen Developer</strong> is an independent software engineering studio dedicated to building clean, high-efficiency tools for Minecraft server owners and network administrators.
+          </p>
+          <p>
+            Inspired by the principle of <em>Kaizen</em>—continuous, incremental refinement—our development philosophy rejects bloated all-in-one plugins in favor of focused, low-overhead systems that solve real performance bottlenecks cleanly.
+          </p>
+          <div class="about-actions">
+            <a href="https://github.com/kaizendev172/kzoptimizer-plugin" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+            <a href="https://discord.gg/gPuy2AmuMm" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Join Community Discord</a>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h3>Engineering Standards</h3>
+          <ul class="standards-list">
+            <li>
+              <strong>Zero Bloat</strong>
+              <span>No unnecessary telemetry trackers, forced ads, or heavy dependencies.</span>
+            </li>
+            <li>
+              <strong>Vanilla Mechanics Intact</strong>
+              <span>Technical farms, villager halls, and PvP knockback behave accurately.</span>
+            </li>
+            <li>
+              <strong>Open &amp; Transparent</strong>
+              <span>Direct access to releases, changelogs, and community support on GitHub &amp; Discord.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.svg" alt="Kaizen Developer" width="22" height="22" />
+        <span><strong>KAIZEN DEVELOPER</strong> — KZOptimizer</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/kaizendev172/kzoptimizer-plugin" target="_blank" rel="noopener noreferrer">Download Plugin</a>
+        <a href="https://discord.gg/gPuy2AmuMm" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="#optimization">Optimization Guide</a>
+        <a href="#install">Installation</a>
+      </div>
+
+      <p class="footer-copy">
+        &copy; <span id="year"></span> Kaizen Developer. Not affiliated with Mojang AB or Microsoft.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
